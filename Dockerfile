@@ -4,7 +4,8 @@ FROM python:3.8
 WORKDIR /usr/src/app
 
 #install dependencies
-RUN pip3 install --no-cache-dir -r requirements.txt
+COPY requirements.txt .
+RUN pip3 install --no-cache-dir
 
 #copy all source code to working directory
 COPY /src .
